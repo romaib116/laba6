@@ -1,0 +1,207 @@
+{% extends "main/base.html" %}
+{% block links %}
+    <link href="../../static/css/tabl_page.css" rel="stylesheet" type="text/css" />
+{% endblock%}
+{% block bd %}
+<header>
+			<div id="logo">
+				<h1>
+					<a href="#">Астрология</a>
+				</h1>
+			</div>
+			<div id="nav">
+					<ul>
+						<li class="first active">
+							<a href="{%  url 'home' %}">Главная</a>
+						</li>
+						<li>
+							<a href="{%  url 'text' %}">Кармическая задача</a>
+						</li>
+						<li>
+							<a href="{%  url 'tabl' %}">Знаки зодиака</a>
+						</li>
+						<li>
+							<a href="{%  url 'form' %}">Помощь астролога</a>
+						</li>
+					</ul>
+
+					</div>
+
+		</header>
+
+		<section class="u-clearfix u-section-1">
+      		<img class="u-expand-resize u-expanded-width u-image u-image-1" src="../../static/images/sakura.jpg">
+
+       <table id="myTable" border="1" align="center" bgcolor="LavenderBlush" cellpadding="7">
+   <caption>Знаки зодиака</caption>
+
+   <tr>
+    <th onclick="sortTable()"> Знак зодиака</th>
+    <th>Временной промежуток</th>
+    <th>Стихия</th>
+   </tr>
+   <tr><td>Овен</td><td>21 марта - 20 апреля</td><td>Огонь</td></tr>
+   <tr><td>Телец</td><td>21 апреля - 21 мая</td><td>Земля</td></tr>
+   <tr><td>Близнецы</td><td>22 мая - 21 июня</td><td>Воздух</td></tr>
+   <tr><td>Рак</td><td>22 июня - 22 июля</td><td>Вода</td></tr>
+   <tr><td>Лев</td><td>23 июля - 21 августа</td><td>Огонь</td></tr>
+   <tr><td>Дева</td><td>22 августа - 23 сентября</td><td>Земля</td></tr>
+   <tr><td>Весы</td><td>24 сентября - 23 октября</td><td>Воздух</td></tr>
+   <tr><td>Скорпион</td><td>24 октября - 22 ноября</td><td>Вода</td></tr>
+   <tr><td>Стрелец</td><td>23 ноября - 22 декабря</td><td>Огонь</td></tr>
+   <tr><td>Козерог</td><td>23 декабря - 20 января</td><td>Земля</td></tr>
+   <tr><td>Водолей</td><td>21 января - 19 февраля</td><td>Воздух</td></tr>
+   <tr><td>Рыбы</td><td>20 февраля - 20 марта</td><td>Вода</td></tr>
+  </table>
+
+
+      </div>
+    </section>
+
+        <script>
+function sortTable() {
+  var table, rows, switching, i, x, y, shouldSwitch;
+  table = document.getElementById("myTable");
+  switching = true;
+  /*Make a loop that will continue until
+  no switching has been done:*/
+  while (switching) {
+    //start by saying: no switching is done:
+    switching = false;
+    rows = table.getElementsByTagName("TR");
+    /*Loop through all table rows (except the
+    first, which contains table headers):*/
+    for (i = 1; i < (rows.length - 1); i++) {
+      //start by saying there should be no switching:
+      shouldSwitch = false;
+      /*Get the two elements you want to compare,
+      one from current row and one from the next:*/
+      x = rows[i].getElementsByTagName("TD")[0];
+      y = rows[i + 1].getElementsByTagName("TD")[0];
+      //check if the two rows should switch place:
+      if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+        //if so, mark as a switch and break the loop:
+        shouldSwitch = true;
+        break;
+      }
+    }
+    if (shouldSwitch) {
+      /*If a switch has been marked, make the switch
+      and mark that a switch has been done:*/
+      rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+      switching = true;
+    }
+  }
+}
+</script>
+{% endblock%}
+{% block footer %}
+    &copy; Слесарева Екатерина
+{% endblock%}
+
+<!--<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Тильда</title>
+		<link href="../../static/css/tabl_page.css" rel="stylesheet" type="text/css" />
+		
+	</head>
+	<body>
+		<header>
+			<div id="logo">
+				<h1>
+					<a href="#">Астрология</a>
+				</h1>
+			</div>
+			<div id="nav">
+					<ul>
+						<li class="first active">
+							<a href="{%  url 'home' %}">Главная</a>
+						</li>
+						<li>
+							<a href="{%  url 'text' %}">Кармическая задача</a>
+						</li>
+						<li>
+							<a href="{%  url 'tabl' %}">Знаки зодиака</a>
+						</li>
+						<li>
+							<a href="form_page">Помощь астролога</a>
+						</li>
+					</ul>
+						
+					</div>
+			
+		</header>
+		
+		<section class="u-clearfix u-section-1">
+      		<img class="u-expand-resize u-expanded-width u-image u-image-1" src="../../static/images/sakura.jpg">
+      		
+       <table id="myTable" border="1" align="center" bgcolor="LavenderBlush" cellpadding="7">
+   <caption>Знаки зодиака</caption>
+   
+   <tr>
+    <th onclick="sortTable()"> Знак зодиака</th>
+    <th>Временной промежуток</th>
+    <th>Стихия</th>
+   </tr>
+   <tr><td>Овен</td><td>21 марта - 20 апреля</td><td>Огонь</td></tr>
+   <tr><td>Телец</td><td>21 апреля - 21 мая</td><td>Земля</td></tr>
+   <tr><td>Близнецы</td><td>22 мая - 21 июня</td><td>Воздух</td></tr>
+   <tr><td>Рак</td><td>22 июня - 22 июля</td><td>Вода</td></tr>
+   <tr><td>Лев</td><td>23 июля - 21 августа</td><td>Огонь</td></tr>
+   <tr><td>Дева</td><td>22 августа - 23 сентября</td><td>Земля</td></tr>
+   <tr><td>Весы</td><td>24 сентября - 23 октября</td><td>Воздух</td></tr>
+   <tr><td>Скорпион</td><td>24 октября - 22 ноября</td><td>Вода</td></tr>
+   <tr><td>Стрелец</td><td>23 ноября - 22 декабря</td><td>Огонь</td></tr>
+   <tr><td>Козерог</td><td>23 декабря - 20 января</td><td>Земля</td></tr>
+   <tr><td>Водолей</td><td>21 января - 19 февраля</td><td>Воздух</td></tr>
+   <tr><td>Рыбы</td><td>20 февраля - 20 марта</td><td>Вода</td></tr>
+  </table>
+       
+   
+      </div>
+    </section>
+	
+        <script>
+function sortTable() {
+  var table, rows, switching, i, x, y, shouldSwitch;
+  table = document.getElementById("myTable");
+  switching = true;
+  /*Make a loop that will continue until
+  no switching has been done:*/
+  while (switching) {
+    //start by saying: no switching is done:
+    switching = false;
+    rows = table.getElementsByTagName("TR");
+    /*Loop through all table rows (except the
+    first, which contains table headers):*/
+    for (i = 1; i < (rows.length - 1); i++) {
+      //start by saying there should be no switching:
+      shouldSwitch = false;
+      /*Get the two elements you want to compare,
+      one from current row and one from the next:*/
+      x = rows[i].getElementsByTagName("TD")[0];
+      y = rows[i + 1].getElementsByTagName("TD")[0];
+      //check if the two rows should switch place:
+      if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+        //if so, mark as a switch and break the loop:
+        shouldSwitch = true;
+        break;
+      }
+    }
+    if (shouldSwitch) {
+      /*If a switch has been marked, make the switch
+      and mark that a switch has been done:*/
+      rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+      switching = true;
+    }
+  }
+}
+</script>
+   
+  </body>
+</html>
+-->
+
+
+

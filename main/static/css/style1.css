@@ -1,0 +1,144 @@
+
+body {
+	font-size: 12pt;
+	line-height: 1.75em;
+	font-family: Andale Mono, monospace;
+	background: #4B0082 url('../images/fon4.jpg');
+	color: #ebe1d9;
+}
+
+h2,h3,h4 {
+	margin-bottom: 1em;
+	font-family: Arvo, serif;
+	
+}
+h3{
+	cursor: pointer;
+}
+
+p {
+	margin-bottom: 1.5em;
+}
+
+ul {
+	margin-bottom: 1.5em;
+}
+
+.hide {
+    display: none;
+}
+.show {
+   display: block; 
+}
+h3.hide_h {
+ 
+	background: #fff;
+}
+h3.show_h {
+   
+   background: #E6E6FA;
+}
+
+#content {
+	width: 800px;
+	margin: 0 0 0 100px;
+	padding: 40px;
+	background: #fff;
+}
+
+
+#footer {
+	position: relative;
+	padding: 40px;
+	width: 1100px;
+	
+}
+#nav a.act {
+	
+	text-decoration: none;
+	color: #00FF00;
+	font-size: 1.2em;
+}
+#nav a:hover {
+	
+	text-decoration: none;
+	color: #DDA0DD;
+	font-size: 1.2em;
+}
+
+#header {
+	position: relative;
+	padding: 40px;
+	height: 120px;
+}
+
+#logo {
+	position: absolute;
+	top: 10px;
+	left: 40px;
+	height: 120px;
+	line-height: 120px;
+}
+
+#logo a {
+	text-decoration: none;
+	color: #fff;
+}
+
+#logo h1 {
+	font-size: 3.5em;
+	font-family: Lobster, cursive;
+	text-shadow: 0 2px 1px #32251B;
+}
+
+#main {
+	position: relative;
+	padding: 0;
+	width: 1180px;
+	color: #5e5e5e;
+}
+
+#main strong {
+	color: #3e3e3e;
+}
+
+#main h2 {
+	color: #242424;
+}
+
+
+#nav {
+	position: absolute;
+	right: 40px;
+	height: 53px;
+	line-height: 30px;
+	top: 73px;
+}
+
+#nav a {
+	text-decoration: none;
+
+	color: #ffff;
+	text-shadow: 0 1px 1px #32251B;
+	font-size: 1.2em;
+}
+
+#nav li {
+	margin: 0 1em 0 1em;
+}
+
+#nav ul {
+	list-style: none;
+}
+
+#nav ul li {
+	float: left;
+}
+
+#outer {
+	position: relative;
+	width: 1180px;
+	margin: 0 auto;
+	padding: 30px;
+}
+

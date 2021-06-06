@@ -1,0 +1,25 @@
+{% extends "main/base.html" %}
+{% block links %}
+    <link rel="stylesheet" type="text/css" href="../../static/css/style.css"
+{% endblock%}
+{% block bd %}
+     <header>
+ 	    </header>
+  	    <main>
+  		    <div class="container">
+  				<div class = "columns-headers">LOG IN</div>
+
+  				<form method="post">
+                    {% csrf_token %}
+                    <fieldset>
+                        <legend>LOG IN</legend>
+                        {{ login_form.as_p }}
+                    </fieldset>
+                    <p><input type="submit" class="button" value="Вход"></p>
+                </form>
+
+  			</div>
+  	    </main>
+{% endblock%}
+{% block footer %}
+{% endblock%}

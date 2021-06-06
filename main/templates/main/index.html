@@ -1,0 +1,144 @@
+{% extends "main/base.html" %}
+{% block links %}
+    <link href="../../static/css/newstyle.css" rel="stylesheet" type="text/css" />
+    <script src="../../static/java/java.js"></script>
+{% endblock%}
+
+{% block bd %}
+    <header>
+			<div id="logo">
+				<h1>
+					<a href="#">Астрология</a>
+				</h1>
+			</div>
+			<div id="nav">
+			    <div id="menu-act">
+					<ul>
+						<li>
+							<a href="{%  url 'home' %}">Главная</a>
+						</li>
+						<li>
+							<a href="{%  url 'text' %}">Кармическая задача</a>
+						</li>
+						<li>
+							<a href="{%  url 'tabl' %}">Знаки зодиака</a>
+						</li>
+						<li>
+							<a href="{%  url 'form' %}">Помощь астролога</a>
+						</li>
+					</ul>
+                </div>
+			    <script type="text/javascript">shineLinks('menu-act');</script>
+			</div>
+
+		</header>
+        <img class=" u-expanded-width u-image u-image-1" src="../../static/images/space1.jpg" data-image-width="1280" data-image-height="720">
+		<section class="u-section-1">
+      		<div class=" u-repeater u-list-1">
+        		<div class=" u-container-style  u-list-item-1">
+          		    <div class=" u-container-layout-1">
+				    <img src="../../static/images/cos1.png" width="200" height="200" alt=""  />
+            			<h3 class="u-text u-text-1"> Кармическая задача Знаков зодиака </h3>
+            			<p class="u-text u-text-2">Что Тень зодиака, есть ли она у вас? Как узнать к чему вы склонны и какие задачи стоят у вашего знака зодиака? Узнать это можно здесь.</p>
+            			<a href="{%  url 'text' %}">Read More</a>
+          		    </div>
+        		</div>
+        		<div class=" u-container-style u-list-item-2">
+          		    <div class=" u-container-layout-2">
+				        <img src="../../static/images/zn1.png" width="200" height="200" alt=""  />
+            			<h3 class="u-text u-text-3">Знаки зодиака</h3>
+            			<p class="u-text u-text-4">Как распределяются знаки зодиака по датам? Какая у вас стихия? Узнать это можно здесь.</p>
+            			<a href="{%  url 'tabl' %}">Read More</a>
+          		    </div>
+        		</div>
+        		<div class=" u-container-style  u-list-item-3">
+          		    <div class=" u-container-layout-3">
+				    <img src="../../static/images/soz1.png" width="200" height="200" alt=""  />
+            			<h3 class="u-text u-text-5">Помощь от астролога</h3>
+            			<p class="u-text u-text-6">Здесь Вы можете задать вопрос и получить достойный ответ на него.</p>
+            			<a href="{%  url 'form' %}">Read More</a>
+          		    </div>
+        		</div>
+      		</div>
+        </section>
+{% endblock %}
+{% block footer %}
+    &copy; Виктория Макарова
+{% endblock %}
+
+<!--<!doctype html>
+
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Название сайта</title>
+		<link href="../static/css/newstyle.css" rel="stylesheet" type="text/css" />
+		<script src="../static/java/java.js"></script>
+		
+	</head>
+	<body>
+		<header>
+			<div id="logo">
+				<h1>
+					<a href="#">Астрология</a>
+				</h1>
+			</div>
+			<div id="nav">
+			    <div id="menu-act">
+					<ul>
+						<li>
+							<a href="/">Главная</a>
+						</li>
+						<li>
+							<a href="text_page">Кармическая задача</a>
+						</li>
+						<li>
+							<a href="#">Знаки зодиака</a>
+						</li>
+						<li>
+							<a href="form_page">Помощь астролога</a>
+						</li>
+					</ul>
+                </div>
+			    <script type="text/javascript">shineLinks('menu-act');</script>
+			</div>
+			
+		</header>
+        <img class=" u-expanded-width u-image u-image-1" src="../static/images/space1.jpg" data-image-width="1280" data-image-height="720">
+		<section class="u-section-1">
+      		<div class=" u-repeater u-list-1">
+        		<div class=" u-container-style  u-list-item-1">
+          		    <div class=" u-container-layout-1">
+				    <img src="../static/images/cos1.png" width="200" height="200" alt=""  />
+            			<h3 class="u-text u-text-1"> Кармическая задача Знаков зодиака </h3>
+            			<p class="u-text u-text-2">Что Тень зодиака, есть ли она у вас? Как узнать к чему вы склонны и какие задачи стоят у вашего знака зодиака? Узнать это можно здесь.</p>
+            			<a href="text_page">Read More</a>
+          		    </div>
+        		</div>
+        		<div class=" u-container-style u-list-item-2">
+          		    <div class=" u-container-layout-2">
+				        <img src="../static/images/zn1.png" width="200" height="200" alt=""  />
+            			<h3 class="u-text u-text-3">Знаки зодиака</h3>
+            			<p class="u-text u-text-4">Как распределяются знаки зодиака по датам? Какая у вас стихия? Узнать это можно здесь.</p>
+            			<a href="#">Read More</a>
+          		    </div>
+        		</div>
+        		<div class=" u-container-style  u-list-item-3">
+          		    <div class=" u-container-layout-3">
+				    <img src="../static/images/soz1.png" width="200" height="200" alt=""  />
+            			<h3 class="u-text u-text-5">Помощь от астролога</h3>
+            			<p class="u-text u-text-6">Здесь Вы можете задать вопрос и получить достойный ответ на него.</p>
+            			<a href="form_page">Read More</a>
+          		    </div>
+        		</div>
+      		</div>
+        </section>
+        
+        <div id="footer">
+  		     &copy; Виктория Макарова
+        </div>
+    </body>
+</html>
+-->
+
+
